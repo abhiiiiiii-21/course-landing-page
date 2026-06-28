@@ -1,6 +1,7 @@
 import Menu from "./_components/Menu";
 import Hero from "./_components/Hero";
 import TrustBar from "./_components/TrustBar";
+import WhyChoose from "./_components/WhyChoose";
 
 export default function Home() {
   return (
@@ -25,6 +26,11 @@ export default function Home() {
         {/* Trust Bar Section Container */}
         <div className="w-full border-b border-gray-300/70">
           <TrustBar />
+        </div>
+
+        {/* Why Choose Section Container */}
+        <div className="w-full border-b border-gray-300/70">
+          <WhyChoose />
         </div>
       </div>
     </div>
