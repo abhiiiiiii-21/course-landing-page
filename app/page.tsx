@@ -3,10 +3,12 @@ import Hero from "./_components/Hero";
 import TrustBar from "./_components/TrustBar";
 import WhyChoose from "./_components/WhyChoose";
 import CourseCurriculum from "./_components/CourseCurriculum";
+import Mentors from "./_components/Mentors";
+import Pricing from "./_components/Pricing";
 
 export default function Home() {
   return (
-    <div className="bg-[#f6f6f6] min-h-screen font-inter relative">
+    <div className="bg-[#f6f6f6] min-h-screen relative">
       <Menu />
 
       {/* Grid overlay for vertical lines that span the entire height */}
@@ -36,6 +38,14 @@ export default function Home() {
 
         <div className="w-full border-b border-gray-300/70">
           <CourseCurriculum />
+        </div>
+
+        <div className="w-full border-b border-gray-300/70">
+          <Mentors />
+        </div>
+
+        <div className="w-full border-b border-gray-300/70">
+          <Pricing />
         </div>
       </div>
     </div>

@@ -1,0 +1,54 @@
+{
+  "sectionTitle": "Choose Your Learning Path",
+  "sectionSubtitle": "Compare both programs and choose the one that aligns with your learning goals.",
+
+  "plans": [
+    {
+      "id": "foundation",
+      "badge": "",
+      "title": "2-Month Certificate Course",
+      "duration": "2 Months",
+      "price": "₹7,999",
+      "originalPrice": null,
+      "description": "Build a strong foundation in contract drafting and negotiation through live online sessions.",
+
+      "buttonText": "Enroll Now",
+
+      "features": [
+        "8 Live Classes",
+        "Weekly Live Lectures",
+        "2 Practical Assignments",
+        "202 Pages Reading Modules",
+        "Fundamentals of Contract Drafting",
+        "Money-Back Guarantee",
+        "Learning Manager Support",
+        "Certificate + Alumni Status"
+      ]
+    },
+
+    {
+      "id": "expert",
+      "badge": "MOST POPULAR",
+      "title": "6-Month Expert-Level Course",
+      "duration": "6 Months",
+      "price": "₹24,999",
+      "originalPrice": "₹60,000",
+      "description": "Master contract drafting, legal freelancing, and negotiation with an intensive expert-level program.",
+
+      "buttonText": "Enroll Now",
+
+      "highlight": true,
+
+      "features": [
+        "54+ Live Expert Sessions",
+        "24+ Contract Drafting Practice",
+        "17 Assignments with Personal Feedback",
+        "800 Pages Reading Modules",
+        "Career & Freelancing Sessions",
+        "Advanced Negotiation Module",
+        "Money-Back Guarantee",
+        "Certificate + Alumni Status"
+      ]
+    }
+  ]
+}

@@ -237,10 +237,14 @@ export default function CourseCurriculum() {
               </div>
 
               <div className="mt-auto pt-6 relative">
-                <button className="w-full bg-[#F7931E] hover:bg-[#E57D10] text-white font-semibold rounded-xl py-3 transition-colors duration-300 flex items-center justify-center gap-2 text-base shadow-lg shadow-orange-500/20">
+                <a 
+                  href="https://www.lawctopuslawschool.com/courses/cdn6-months" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#F7931E] hover:bg-[#E57D10] text-white font-semibold rounded-xl py-3 transition-colors duration-300 flex items-center justify-center text-base shadow-lg shadow-orange-500/20"
+                >
                   Enroll Now
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </button>
+                </a>
               </div>
             </div>
           </div>

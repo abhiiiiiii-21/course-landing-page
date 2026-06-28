@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import SmoothScroll from "./_components/SmoothScroll";
 
 const raleway = Raleway({
-  variable: "--font-sans",
+  variable: "--font-raleway",
   subsets: ["latin"],
 });
 

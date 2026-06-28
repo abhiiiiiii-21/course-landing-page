@@ -80,9 +80,14 @@ const Menu = () => {
 
           {/* Right: CTA */}
           <div className="flex-1 h-full flex items-center justify-end pr-3 pl-2">
-            <button className="bg-[#0b0f17] hover:bg-black text-white text-[15px] font-medium px-6 py-2.5 rounded-lg transition-colors cursor-pointer">
+            <a 
+              href="https://www.lawctopuslawschool.com/courses/cdn6-months" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#0b0f17] hover:bg-black text-white text-[15px] font-medium px-6 py-2.5 rounded-lg transition-colors cursor-pointer"
+            >
               Enroll Now
-            </button>
+            </a>
           </div>
         </div>
 
