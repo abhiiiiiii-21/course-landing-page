@@ -1,0 +1,36 @@
+{
+  "badge": "Got questions",
+  "title": "We've got answers",
+  "arrowText": "Let's clear things up",
+
+  "faqs": [
+    {
+      "question": "Who is this course designed for?",
+      "answer": "This course is ideal for law students, fresh graduates, practicing advocates, in-house legal professionals, company secretaries, CAs, entrepreneurs, and anyone looking to master contract drafting and build practical legal skills."
+    },
+    {
+      "question": "Will the classes be live or recorded?",
+      "answer": "The program is primarily delivered through live expert-led sessions. Recordings are also provided so you can revisit concepts and continue learning at your own pace."
+    },
+    {
+      "question": "Will I receive a certificate after completing the course?",
+      "answer": "Yes. Upon successful completion of the course and required assignments, you'll receive a completion certificate from Lawctopus Law School. Merit certificates are also awarded to top-performing learners."
+    },
+    {
+      "question": "What makes the 6-month course different from the 2-month course?",
+      "answer": "The 6-month Expert-Level Course includes 54+ live sessions, advanced contract drafting, freelancing modules, negotiation training, networking sessions, career support, extensive reading modules, and significantly more practical assignments with personalized feedback."
+    },
+    {
+      "question": "Is there a money-back guarantee?",
+      "answer": "Yes. The course comes with a 30-day money-back guarantee. Eligibility is subject to the completion requirements and refund policy outlined by Lawctopus Law School."
+    },
+    {
+      "question": "Will I receive personal feedback and mentorship?",
+      "answer": "Yes. Throughout the program you'll receive detailed feedback on practical assignments, guidance from experienced faculty, and support from the learning management team to help you improve consistently."
+    },
+    {
+      "question": "Can this course help me start legal freelancing or improve my career?",
+      "answer": "Yes. The curriculum includes dedicated freelancing and career sessions designed to help you build practical drafting skills, create a professional profile, work with clients, and confidently pursue legal opportunities."
+    }
+  ]
+}

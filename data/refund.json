@@ -1,0 +1,37 @@
+{
+  "badge": "30-DAY MONEY-BACK GUARANTEE",
+  "title": "Learn Risk-Free",
+  "subtitle": "Complete the course sincerely, and if you still don't find value, we'll refund 100% of your course fee-no questions asked.",
+
+  "eligibilityTitle": "Refund Eligibility",
+
+  "requirements": [
+    {
+      "title": "Attend Live Classes",
+      "description": "Attend at least 66% of all live sessions with your camera turned ON."
+    },
+    {
+      "title": "Complete Every Assignment",
+      "description": "Submit all mandatory assignments and secure a passing grade in each."
+    },
+    {
+      "title": "One Reattempt Allowed",
+      "description": "If you don't pass an assignment on your first attempt, one additional submission is permitted."
+    },
+    {
+      "title": "Refund Request Timeline",
+      "description": "Email your refund request within 10 days after your batch's final live session."
+    }
+  ],
+
+  "processTitle": "How Refunds Work",
+
+  "process": [
+    "Submit your refund request via email.",
+    "Our team reviews your course completion records.",
+    "If all eligibility criteria are met, your refund is approved.",
+    "The refund is processed within 10 working days."
+  ],
+
+  "footer": "Designed to reward sincere learners. If you complete the course as required and still don't find value, you're protected by our 30-Day Money-Back Guarantee."
+}

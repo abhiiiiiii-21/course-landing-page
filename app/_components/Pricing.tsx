@@ -1,17 +1,22 @@
 'use client';
 import React from 'react';
 import pricingData from '@/data/pricing.json';
+import refundData from '@/data/refund.json';
 
 const CheckIcon = ({ highlight }: { highlight?: boolean }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
-    width="9" 
-    height="15" 
-    fill="none"
-    viewBox="0 0 9 15"
-    className={`scale-x-[-1] ${highlight ? "text-white" : "text-[#F7931E]"}`}
+    width="12" 
+    height="12" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="3.5" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+    className={highlight ? "text-white" : "text-gray-900"}
   >
-    <path fill="currentColor" d="M1.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m3 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m3 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m-3-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m3-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+    <polyline points="20 6 9 17 4 12"></polyline>
   </svg>
 );
 
@@ -145,6 +150,71 @@ const Pricing = () => {
                 </div>
               </div>
             ))}
+
+          </div>
+        </div>
+
+        {/* Refund Policy Container */}
+        <div className="max-w-[1000px] mx-auto bg-[#e6e6e6] rounded-[32px] p-2 sm:p-2.5 mt-4 sm:mt-6">
+          <div className="bg-[#1C1C1C] rounded-[24px] p-6 sm:p-8 flex flex-col md:flex-row gap-6 sm:gap-8 relative overflow-hidden">
+            
+            {/* Background Accent */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#F7931E] rounded-full blur-[120px] opacity-[0.03] pointer-events-none"></div>
+
+            {/* Left Side - Guarantee Details */}
+            <div className="md:w-5/12 flex flex-col relative z-10 pr-0 md:pr-4">
+              <div className="flex items-center gap-2 mb-5">
+                <img 
+                  src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
+                  alt="Left Dots" 
+                  className="w-[6px] h-[10px] opacity-40 brightness-0 invert"
+                />
+                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase pt-[1px]">
+                  {refundData.badge}
+                </span>
+                <img 
+                  src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
+                  alt="Right Dots" 
+                  className="w-[6px] h-[10px] opacity-40 scale-x-[-1] brightness-0 invert"
+                />
+              </div>
+              
+              <h3 className="text-3xl sm:text-[2rem] font-medium leading-[1.2] tracking-tight text-white mb-4">
+                {refundData.title}
+              </h3>
+              
+              <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
+                {refundData.subtitle}
+              </p>
+
+              <div className="mt-auto pt-6 border-t border-dashed border-white/20">
+                <p className="text-[13px] text-gray-500 italic leading-relaxed">
+                  * {refundData.footer}
+                </p>
+              </div>
+            </div>
+
+            {/* Right Side - Eligibility Requirements */}
+            <div className="md:w-7/12 w-full border border-gray-200 bg-[#E6E6E6] rounded-[20px] p-6 sm:p-8 relative z-10">
+              <h4 className="text-[16px] font-medium text-gray-900 mb-4 flex items-center gap-2.5 border-b border-dashed border-gray-200 pb-4">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7931E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                {refundData.eligibilityTitle}
+              </h4>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-7 mt-6">
+                {refundData.requirements.map((req, idx) => (
+                  <div key={idx}>
+                    <h5 className="font-medium text-gray-900 text-[15px] mb-2 flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#F7931E] shrink-0"></div>
+                      {req.title}
+                    </h5>
+                    <p className="text-[14px] text-gray-500 pl-4 leading-relaxed">
+                      {req.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
           </div>
         </div>
