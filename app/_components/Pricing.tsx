@@ -136,7 +136,7 @@ const Pricing = () => {
                   </ul>
 
                   <a 
-                    href="https://www.lawctopuslawschool.com/courses/cdn6-months" 
+                    href={plan.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={`mt-auto w-full text-center py-4 rounded-lg font-bold text-[15px] transition-colors block ${

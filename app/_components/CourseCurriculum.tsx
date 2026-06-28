@@ -103,7 +103,7 @@ export default function CourseCurriculum() {
   const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default
 
   return (
-    <section className="relative w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto lg:border-x lg:border-gray-300/70">
+    <section id="curriculum" className="relative w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto lg:border-x lg:border-gray-300/70">
       <div className="flex flex-col items-center relative z-10">
         
         {/* Section Badge */}

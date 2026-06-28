@@ -25,7 +25,7 @@ export default function Home() {
         <div className="w-full h-24 border-b border-gray-300/70"></div>
 
         {/* Hero Section Container */}
-        <div className="w-full border-b border-gray-300/70">
+        <div id="home" className="w-full border-b border-gray-300/70">
           <Hero />
         </div>
 
@@ -35,15 +35,15 @@ export default function Home() {
         </div>
 
         {/* Why Choose Section Container */}
-        <div className="w-full border-b border-gray-300/70">
+        <div id="overview" className="w-full border-b border-gray-300/70">
           <WhyChoose />
         </div>
 
-        <div className="w-full border-b border-gray-300/70">
+        <div id="curriculum" className="w-full border-b border-gray-300/70">
           <CourseCurriculum />
         </div>
 
-        <div className="w-full border-b border-gray-300/70">
+        <div id="faculty" className="w-full border-b border-gray-300/70">
           <Mentors />
         </div>
 
