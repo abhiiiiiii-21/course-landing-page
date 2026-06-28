@@ -35,7 +35,7 @@ const Mentors = () => {
               className="w-[7px] h-[12px] opacity-40"
             />
             <span className="text-[12px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-              Meet Your Mentors
+              Meet Your Instructors
             </span>
             <img 
               src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 

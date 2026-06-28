@@ -6,6 +6,8 @@ import CourseCurriculum from "./_components/CourseCurriculum";
 import Mentors from "./_components/Mentors";
 import Pricing from "./_components/Pricing";
 import FAQs from "./_components/FAQs";
+import CTA from "./_components/CTA";
+import Footer from "./_components/Footer";
 
 export default function Home() {
   return (
@@ -51,6 +53,14 @@ export default function Home() {
 
         <div className="w-full border-b border-gray-300/70">
           <FAQs />
+        </div>
+
+        <div className="w-full">
+          <CTA />
+        </div>
+
+        <div className="w-full">
+          <Footer />
         </div>
       </div>
     </div>

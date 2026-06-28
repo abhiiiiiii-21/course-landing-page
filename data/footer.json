@@ -1,0 +1,52 @@
+{
+  "cta": {
+    "badge": "30-Day Money-Back Guarantee",
+    "titleLine1": "Start Your Contract",
+    "titleLine2": "Drafting Journey Today",
+    "subtitle": "Join India's most comprehensive live contract drafting program",
+    "button": {
+      "text": "Enroll Now",
+      "link": "#pricing"
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Stay Updated",
+      "placeholder": "Enter your email",
+      "buttonText": "Subscribe",
+      "description": "Get course updates, legal career tips, webinars, and exclusive offers directly in your inbox.",
+      "copyright": "© 2026 Lawctopus. All rights reserved."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "administrative": {
+        "heading": "Administrative & Existing Learners",
+        "phone": "+91 87258 94100",
+        "email": "support@lawctopus.com"
+      },
+      "admissions": {
+        "heading": "Course Enquiries & Admissions",
+        "phone": "+91 93596 84056",
+        "email": "courses@lawctopus.com"
+      },
+      "address": "Lawctopus, 2nd Floor, Seat No. 17, Sector 35B, SCO 339-340, Chandigarh (UT) 160022, India"
+    },
+    "navigation": {
+      "left": [
+        { "label": "Our Courses", "href": "#" },
+        { "label": "Curriculum", "href": "#" },
+        { "label": "Pricing", "href": "#" }
+      ],
+      "right": [
+        { "label": "Testimonials", "href": "#" },
+        { "label": "Instructor", "href": "#" },
+        { "label": "Features", "href": "#" }
+      ]
+    },
+    "legal": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Terms and Conditions", "href": "#" },
+      { "label": "Refund Policy", "href": "#" }
+    ]
+  }
+}
