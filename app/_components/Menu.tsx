@@ -1,0 +1,142 @@
+"use client";
+
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const FacebookIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
+  </svg>
+);
+
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const LinkedinIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
+  </svg>
+);
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="fixed top-3.5 left-0 w-full flex justify-center z-50 px-4">
+      <div
+        className="bg-white rounded-[14px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-300/70 overflow-hidden w-full max-w-[420px]"
+      >
+        {/* Header / Closed Menu State */}
+        <div className="flex items-center h-[60px]">
+          {/* Left: Logo */}
+          <div className="flex-1 h-full flex items-center pl-4 pr-2">
+            <a href="/" className="cursor-pointer">
+              <img src="/logo/full.webp" alt="Logo" className="h-[40px] max-w-[160px] w-auto object-contain" />
+            </a>
+          </div>
+          
+          {/* Middle: Hamburger / Close */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-[72px] h-full flex items-center justify-center border-x border-gray-100 hover:bg-gray-50 transition-colors shrink-0 cursor-pointer"
+            aria-label="Toggle Menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900">
+              <motion.line
+                initial={false}
+                animate={{
+                  x1: isOpen ? 6 : 4,
+                  y1: isOpen ? 6 : 10,
+                  x2: isOpen ? 18 : 20,
+                  y2: isOpen ? 18 : 10,
+                  strokeWidth: isOpen ? 1.5 : 1.25,
+                }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              />
+              <motion.line
+                initial={false}
+                animate={{
+                  x1: isOpen ? 6 : 4,
+                  y1: isOpen ? 18 : 14,
+                  x2: isOpen ? 18 : 20,
+                  y2: isOpen ? 6 : 14,
+                  strokeWidth: isOpen ? 1.5 : 1.25,
+                }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              />
+            </svg>
+          </button>
+
+          {/* Right: CTA */}
+          <div className="flex-1 h-full flex items-center justify-end pr-3 pl-2">
+            <button className="bg-[#0b0f17] hover:bg-black text-white text-[15px] font-medium px-6 py-2.5 rounded-lg transition-colors cursor-pointer">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+        {/* Dropdown Menu */}
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="border-t border-gray-100 overflow-hidden"
+            >
+              <div className="flex flex-col py-2 px-6">
+                {["Home", "Overview", "Curriculum", "Faculty", "Career Support", "Pricing"].map(
+                  (item, index) => (
+                    <a
+                      key={item}
+                      href="#"
+                      className={`block w-full py-3.5 border-b border-gray-300/70 border-dashed last:border-b-0 text-[15px] font-medium transition-colors cursor-pointer ${
+                        item === "Home"
+                          ? "text-[#F7931E]"
+                          : "text-[#0F172A] hover:text-[#F7931E]"
+                      }`}
+                    >
+                      {item}
+                    </a>
+                  )
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className="px-6 py-4 flex items-center justify-between mt-1">
+                <div className="flex items-center gap-2">
+                  {[FacebookIcon, InstagramIcon, LinkedinIcon, XIcon].map((Icon, i) => (
+                    <a
+                      key={i}
+                      href="#"
+                      className="w-7 h-7 rounded-md bg-[#F4F4F5] text-gray-700 flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer"
+                    >
+                      <Icon className="w-3.5 h-3.5" />
+                    </a>
+                  ))}
+                </div>
+                <span className="text-[10px] text-gray-400 font-medium">
+                  © 2026 Lawctopus
+                </span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
+export default Menu;
