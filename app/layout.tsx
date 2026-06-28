@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Raleway, Geist } from "next/font/google";
+import { Raleway, Caveat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+import SmoothScroll from "./_components/SmoothScroll";
 
 const raleway = Raleway({
-  variable: "--font-raleway",
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
   subsets: ["latin"],
 });
 
@@ -23,9 +27,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", raleway.variable, "font-sans", geist.variable)}
+      className={cn("h-full", "antialiased", raleway.variable, caveat.variable, "font-sans")}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
