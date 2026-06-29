@@ -3,6 +3,7 @@ import { Raleway, Caveat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import SmoothScroll from "./_components/SmoothScroll";
+import { Analytics } from "@vercel/analytics/next";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -138,6 +139,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#F8F7F4] text-black">
         <SmoothScroll>{children}</SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );

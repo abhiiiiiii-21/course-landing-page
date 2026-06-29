@@ -6,7 +6,7 @@
     "subtitle": "Join India's most comprehensive live contract drafting program",
     "button": {
       "text": "Enroll Now",
-      "link": "#pricing"
+      "link": "#curriculum"
     }
   },
   "footer": {
@@ -33,14 +33,14 @@
     },
     "navigation": {
       "left": [
-        { "label": "Our Courses", "href": "#" },
-        { "label": "Curriculum", "href": "#" },
-        { "label": "Pricing", "href": "#" }
+        { "label": "Why Us", "href": "#why-choose" },
+        { "label": "Our Curriculum", "href": "#curriculum" },
+        { "label": "Pricing", "href": "#pricing" }
       ],
       "right": [
-        { "label": "Testimonials", "href": "#" },
-        { "label": "Instructor", "href": "#" },
-        { "label": "Features", "href": "#" }
+        { "label": "Features", "href": "#why-choose" },
+        { "label": "Instructors", "href": "#faculty" },
+        { "label": "FAQs", "href": "#faqs" }
       ]
     },
     "legal": [
