@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { SplitTextReveal } from "./SplitTextReveal";
 import { CheckCircle2, Plus, Minus, PlayCircle, ShieldCheck, MonitorPlay, FileText, Briefcase, GraduationCap } from "lucide-react";
 
 const CURRICULUM = [
@@ -57,7 +59,7 @@ const CURRICULUM = [
 
 function AccordionItem({ module, isOpen, onClick }: { module: any, isOpen: boolean, onClick: () => void }) {
   return (
-    <div className="bg-white rounded-[16px] overflow-hidden transition-all duration-300">
+    <div className="bg-white rounded-[16px] overflow-hidden transition-all duration-300 shadow-md">
       <button 
         onClick={onClick}
         className="w-full flex flex-col gap-3 p-5 sm:p-6 text-left hover:bg-gray-50/50 transition-colors cursor-pointer"
@@ -101,6 +103,28 @@ function AccordionItem({ module, isOpen, onClick }: { module: any, isOpen: boole
 
 export default function CourseCurriculum() {
   const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default
+  const headerRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px 0px" });
+  
+  const cardsRef = useRef(null);
+  const isCardsInView = useInView(cardsRef, { once: true, margin: "-10%" });
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }
+    }
+  };
+
+  const lineVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
 
   return (
     <section id="curriculum" className="relative w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto lg:border-x lg:border-gray-300/70">
@@ -124,41 +148,45 @@ export default function CourseCurriculum() {
         </div>
 
         {/* Headings */}
-        <div className="max-w-3xl text-center mb-16 sm:mb-20 mx-auto">
-          <h2 className="text-[1.5rem] sm:text-3xl lg:text-[2.25rem] leading-[1.3] font-medium text-gray-900 mb-6 tracking-tight">
+        <motion.div 
+          ref={headerRef}
+          variants={staggerContainer}
+          initial="hidden"
+          animate={isHeaderInView ? "visible" : "hidden"}
+          className="max-w-3xl text-center mb-16 sm:mb-20 mx-auto"
+        >
+          <SplitTextReveal 
+            as="h2"
+            className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3rem] leading-[1.2] sm:leading-[1.15] font-medium text-gray-900 tracking-tight mb-4 px-2 sm:px-0"
+          >
             Master Contract Drafting,<br className="hidden sm:block" />
             <span className="text-[#F7931E] relative inline-block">
               One Practical Module at a Time
-              {/* Handwritten arrow and text */}
-              <div className="absolute -bottom-1 -right-16 sm:-right-70 hidden md:flex flex-col items-center pointer-events-none drop-shadow-sm -rotate-[16deg]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="31" fill="none" className="mb-1 opacity-90 scale-x-[-1] rotate-[-15deg]">
-                  <path fill="#FF6321" d="M27.933 3.426c.218.018.43.18.42.42-.01.21-.186.44-.42.42a24.734 24.734 0 0 0-8.242.68 26.07 26.07 0 0 0-3.922 1.337 25.717 25.717 0 0 0-3.667 1.97 23.484 23.484 0 0 0-3.274 2.537 24.172 24.172 0 0 0-2.754 3.014 25.55 25.55 0 0 0-2.252 3.506 24.685 24.685 0 0 0-1.633 3.765 25.822 25.822 0 0 0-1.099 4.543l-.03.218-.005.033-.004.03-.023.175A25.017 25.017 0 0 0 .84 29.2c.001.339.01.677.025 1.015.01.22-.2.43-.42.42a.429.429 0 0 1-.42-.42 25.585 25.585 0 0 1 1.06-8.437 26.292 26.292 0 0 1 3.69-7.615 25.21 25.21 0 0 1 6.023-6.04 26.186 26.186 0 0 1 7.645-3.704 25.76 25.76 0 0 1 8.473-1.06c.34.015.679.037 1.018.067Z"/>
-                  <path fill="#FF6321" d="M25.647.12c.168.163.343.317.525.463l.097.076a9.09 9.09 0 0 0 .38.275c.377.26.77.495 1.168.722.798.455 1.617.876 2.381 1.387.446.297.874.625 1.262.994.241.23.102.603-.186.702a56.01 56.01 0 0 0-3.338 1.274l-.074.03-.017.008a56.949 56.949 0 0 0-2.95 1.351c-.197.097-.464.06-.575-.15-.1-.19-.06-.471.15-.575a56.92 56.92 0 0 1 5.876-2.499l-.009-.006-.052-.042a8.97 8.97 0 0 0-.427-.307 17.025 17.025 0 0 0-1.171-.718c-.799-.454-1.617-.876-2.38-1.39A9.16 9.16 0 0 1 25.053.714c-.158-.153-.165-.442 0-.594a.428.428 0 0 1 .594 0Z"/>
-                </svg>
-                <span 
-                  style={{ fontFamily: 'var(--font-caveat)' }} 
-                  className="text-[#FF6321] text-[20px] tracking-wide font-medium whitespace-nowrap"
-                >
-                  Learn step by step
-                </span>
-              </div>
             </span>
-          </h2>
-          <p className="text-gray-500 text-base sm:text-lg font-medium max-w-2xl mx-auto">
+          </SplitTextReveal>
+          <SplitTextReveal 
+            as="p"
+            className="text-gray-500 text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0"
+          >
             A comprehensive, step-by-step curriculum designed to take you from legal basics to professional freelance mastery.
-          </p>
-        </div>
+          </SplitTextReveal>
+        </motion.div>
 
         {/* Main Content: Left & Right */}
-        <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch max-w-[1200px] mx-auto">
+        <div ref={cardsRef} className="w-full flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch max-w-[1200px] mx-auto">
           
           {/* Left Column - Dark Card */}
-          <div className="w-full lg:flex-1">
-            <div className="bg-[#1c1c1c] rounded-3xl p-8 lg:p-10 text-white shadow-2xl h-full flex flex-col">
+          <motion.div 
+            initial={{ x: -60, opacity: 0 }}
+            animate={isCardsInView ? { x: 0, opacity: 1 } : { x: -60, opacity: 0 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+            className="w-full lg:flex-1"
+          >
+            <div className="bg-[#1c1c1c] rounded-[24px] sm:rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-md h-full flex flex-col">
               
               <div className="flex-1 flex flex-col">
                 {/* Badge */}
-                <div className="flex items-center gap-3 mb-10">
+                <div className="flex items-center gap-2 sm:gap-3 mb-8 sm:mb-10">
                   <img 
                     src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
                     alt="Left Dots" 
@@ -174,13 +202,13 @@ export default function CourseCurriculum() {
                   />
                 </div>
 
-                <h3 className="text-3xl sm:text-[2rem] font-medium mb-10 tracking-tight text-white leading-tight">
+                <h3 className="text-2xl sm:text-3xl lg:text-[2rem] font-medium mb-8 sm:mb-10 tracking-tight text-white leading-tight">
                   What You'll Learn
                 </h3>
 
                 {/* Grid Stats */}
-                <div className="grid grid-cols-2 gap-y-8 gap-x-6 mb-10">
-                  <div className="flex flex-col gap-2.5">
+                <div className="grid grid-cols-2 gap-y-6 sm:gap-y-8 gap-x-4 sm:gap-x-6 mb-8 sm:mb-10">
+                  <div className="flex flex-col gap-1.5 sm:gap-2.5">
                     <div className="flex items-center gap-2 text-[#F7931E]">
                       <MonitorPlay className="w-[18px] h-[18px]" strokeWidth={2.5} />
                       <span className="font-semibold text-[13px]">Format</span>
@@ -210,11 +238,11 @@ export default function CourseCurriculum() {
                   </div>
                 </div>
 
-                <hr className="border-gray-700/60 mb-8" />
+                <hr className="border-gray-700/60 mb-6 sm:mb-8" />
 
-                <h4 className="text-[13px] font-medium text-gray-400 mb-6 uppercase tracking-wider">Program at a Glance</h4>
+                <h4 className="text-[12px] sm:text-[13px] font-medium text-gray-400 mb-5 sm:mb-6 uppercase tracking-wider">Program at a Glance</h4>
                 
-                <ul className="flex flex-col gap-5 mb-10">
+                <ul className="flex flex-col gap-4 sm:gap-5 mb-8 sm:mb-10">
                   {[
                     '6-Month Structured Live Program',
                     'Draft 24+ Industry-Ready Contracts',
@@ -238,19 +266,47 @@ export default function CourseCurriculum() {
 
               <div className="mt-auto pt-6 relative">
                 <a 
-                  href="https://www.lawctopuslawschool.com/courses/cdn6-months" 
+                  href="/curriculum/main.pdf" 
+                  download="Lawctopus_Course_Curriculum.pdf"
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-full bg-[#F7931E] hover:bg-[#E57D10] text-white font-semibold rounded-xl py-3 transition-colors duration-300 flex items-center justify-center text-base shadow-lg shadow-orange-500/20"
+                  className="group w-full bg-[#F7931E] hover:bg-[#F7931E] text-white font-semibold rounded-xl py-3 transition-colors duration-300 flex items-center justify-center text-base shadow-lg shadow-orange-500/20"
                 >
-                  Enroll Now
+                  <div className="relative overflow-hidden leading-tight flex items-center h-[24px]">
+                    <span
+                      className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full after:content-[attr(data-text)] after:absolute after:left-0 after:top-full"
+                      data-text="Download Full Curriculum"
+                    >
+                      Download Full Curriculum
+                    </span>
+                  </div>
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Curriculum Accordion */}
-          <div className="w-full lg:flex-1 bg-[#E6E6E6] rounded-[24px] p-3 sm:p-3.5 flex flex-col gap-3 h-full">
+          <motion.div 
+            initial={{ x: 60, opacity: 0 }}
+            animate={isCardsInView ? { x: 0, opacity: 1 } : { x: 60, opacity: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+            className="relative w-full lg:flex-1 bg-[#E6E6E6] rounded-[24px] p-2 sm:p-3.5 flex flex-col gap-2 sm:gap-3 h-full"
+          >
+            
+            {/* Handwritten arrow and text pointing to the first phase card */}
+            <div className="absolute -top-23 -right-8 hidden xl:flex flex-col items-center pointer-events-none rotate-[8deg] z-10 gap-2">
+              <span 
+                style={{ fontFamily: 'var(--font-caveat)' }} 
+                className="text-[#FF6321] text-[20px] tracking-wide font-medium whitespace-nowrap"
+              >
+                Learn step by step
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="31" fill="none" className="mb-1 opacity-90 rotate-[150deg]">
+                <path fill="#FF6321" d="M27.933 3.426c.218.018.43.18.42.42-.01.21-.186.44-.42.42a24.734 24.734 0 0 0-8.242.68 26.07 26.07 0 0 0-3.922 1.337 25.717 25.717 0 0 0-3.667 1.97 23.484 23.484 0 0 0-3.274 2.537 24.172 24.172 0 0 0-2.754 3.014 25.55 25.55 0 0 0-2.252 3.506 24.685 24.685 0 0 0-1.633 3.765 25.822 25.822 0 0 0-1.099 4.543l-.03.218-.005.033-.004.03-.023.175A25.017 25.017 0 0 0 .84 29.2c.001.339.01.677.025 1.015.01.22-.2.43-.42.42a.429.429 0 0 1-.42-.42 25.585 25.585 0 0 1 1.06-8.437 26.292 26.292 0 0 1 3.69-7.615 25.21 25.21 0 0 1 6.023-6.04 26.186 26.186 0 0 1 7.645-3.704 25.76 25.76 0 0 1 8.473-1.06c.34.015.679.037 1.018.067Z"/>
+                <path fill="#FF6321" d="M25.647.12c.168.163.343.317.525.463l.097.076a9.09 9.09 0 0 0 .38.275c.377.26.77.495 1.168.722.798.455 1.617.876 2.381 1.387.446.297.874.625 1.262.994.241.23.102.603-.186.702a56.01 56.01 0 0 0-3.338 1.274l-.074.03-.017.008a56.949 56.949 0 0 0-2.95 1.351c-.197.097-.464.06-.575-.15-.1-.19-.06-.471.15-.575a56.92 56.92 0 0 1 5.876-2.499l-.009-.006-.052-.042a8.97 8.97 0 0 0-.427-.307 17.025 17.025 0 0 0-1.171-.718c-.799-.454-1.617-.876-2.38-1.39A9.16 9.16 0 0 1 25.053.714c-.158-.153-.165-.442 0-.594a.428.428 0 0 1 .594 0Z"/>
+              </svg>
+            </div>
+
             {CURRICULUM.map((module, idx) => (
               <AccordionItem 
                 key={idx} 
@@ -261,7 +317,7 @@ export default function CourseCurriculum() {
                 }} 
               />
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </div>

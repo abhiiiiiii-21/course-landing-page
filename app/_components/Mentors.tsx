@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import mentors from '@/data/mentors.json';
+import { SplitTextReveal } from './SplitTextReveal';
 
 const Mentors = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,7 +24,7 @@ const Mentors = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-transparent">
+    <section id="faculty" className="py-24 bg-transparent">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         
         {/* Header Section */}
@@ -43,13 +44,19 @@ const Mentors = () => {
               className="w-[7px] h-[12px] opacity-40 scale-x-[-1]"
             />
           </div>
-          <h2 className="text-[2rem] sm:text-[2.5rem] leading-[1.2] font-medium text-gray-900 mb-6 tracking-tight">
-            Learn from India's <br className="hidden sm:block" />
+          <SplitTextReveal 
+            as="h2"
+            className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3rem] leading-[1.2] sm:leading-[1.15] font-medium text-gray-900 tracking-tight mb-4 px-2 sm:px-0"
+          >
+            Learn from India's <br />
             <span className="text-[#F7931E]">Leading Legal Professionals</span>
-          </h2>
-          <p className="text-gray-500 text-base sm:text-lg">
-            Every session is led by practicing lawyers, corporate counsels, legal entrepreneurs, and career mentors who bring real-world experience not just theory to the classroom.
-          </p>
+          </SplitTextReveal>
+          <SplitTextReveal 
+            as="p"
+            className="text-gray-500 text-base sm:text-lg max-w-3xl mx-auto px-4 sm:px-0"
+          >
+            Every session is led by practicing lawyers, corporate counsels, legal entrepreneurs, and career mentors who bring real-world experience to the classroom.
+          </SplitTextReveal>
         </div>
 
         {/* Mentors Slider */}
@@ -61,10 +68,10 @@ const Mentors = () => {
             >
               {mentors.map((mentor, idx) => (
                 <div key={idx} className="w-full shrink-0 px-1 pb-2">
-                  <div className="bg-[#e6e6e6] p-2.5 sm:p-3 rounded-[32px] flex flex-col lg:flex-row gap-2.5 sm:gap-3 items-stretch">
+                  <div className="bg-[#e6e6e6] p-2.5 sm:p-3 rounded-[24px] flex flex-col lg:flex-row gap-2.5 sm:gap-3 items-stretch">
                     
                     {/* Left Image */}
-                    <div className="w-full lg:w-1/2 rounded-[24px] overflow-hidden relative min-h-[400px] lg:min-h-[500px]">
+                    <div className="w-full lg:w-1/2 rounded-[24px] overflow-hidden relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
                       <img 
                         src={mentor.image} 
                         alt={mentor.name} 
@@ -78,20 +85,20 @@ const Mentors = () => {
                     {/* Right Content */}
                     <div className="w-full lg:w-1/2 flex flex-col">
                       {/* Details Card */}
-                      <div className="flex-1 bg-[#1c1c1c] rounded-[24px] p-8 sm:p-12 flex flex-col justify-between">
+                      <div className="flex-1 bg-[#1c1c1c] rounded-[24px] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between">
                         <div>
-                          <h3 className="text-white text-[1.75rem] sm:text-[2rem] leading-tight font-medium tracking-tight mb-2">
+                          <h3 className="text-white text-2xl sm:text-3xl lg:text-[2rem] leading-tight font-medium tracking-tight mb-1.5 sm:mb-2">
                             {idx === 0 ? `Hi, I'm ${mentor.name}.` : mentor.name}
                           </h3>
-                          <p className="text-gray-200 text-[15px] sm:text-[16px] font-normal mb-8">
+                          <p className="text-gray-200 text-[14px] sm:text-[15px] lg:text-[16px] font-normal mb-6 sm:mb-8">
                             {mentor.role}
                           </p>
                           <hr className="border-white/10" />
                         </div>
 
-                        <div className="mt-8">
-                          <h4 className="text-white text-[1.5rem] font-medium mb-4">Bio</h4>
-                          <p className="text-gray-300 text-[15px] sm:text-[16px] leading-[1.7]">
+                        <div className="mt-6 sm:mt-8">
+                          <h4 className="text-white text-xl sm:text-2xl lg:text-[1.5rem] font-medium mb-3 sm:mb-4">Bio</h4>
+                          <p className="text-gray-300 text-[14px] sm:text-[15px] lg:text-[16px] leading-[1.6] sm:leading-[1.7]">
                             {mentor.bio}
                           </p>
                         </div>

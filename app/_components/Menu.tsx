@@ -164,10 +164,11 @@ const Menu = () => {
               <div className="flex flex-col py-2 px-6">
                 {[
                   { label: "Home", href: "#home" },
-                  { label: "Overview", href: "#overview" },
+                  { label: "Why This Course", href: "#why-choose" },
                   { label: "Curriculum", href: "#curriculum" },
                   { label: "Faculty", href: "#faculty" },
-                  { label: "Pricing", href: "#pricing" }
+                  { label: "Pricing", href: "#pricing" },
+                  { label: "FAQs", href: "#faqs" }
                 ].map(
                   (item) => (
                     <MotionLink
