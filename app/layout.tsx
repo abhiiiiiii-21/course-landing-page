@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Mastering Contract Drafting & Freelancing | Lawctopus Law School",
+    default: "Lawctopus Law School | Contract Drafting & Freelancing",
     template: "%s | Lawctopus Law School",
   },
 

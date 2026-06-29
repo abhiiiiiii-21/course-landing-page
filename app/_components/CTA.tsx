@@ -1,6 +1,7 @@
 import React from 'react';
 import footerData from '@/data/footer.json';
 import linksData from '@/data/links.json';
+import Image from 'next/image';
 
 const CTA = () => {
   const { cta } = footerData;
@@ -13,17 +14,21 @@ const CTA = () => {
           <div className="bg-white rounded-[16px] py-16 px-6 sm:px-10 text-center flex flex-col items-center">
             
             <div className="flex items-center gap-2 mb-6">
-              <img 
+              <Image 
                 src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
                 alt="Left Dots" 
+                width={6}
+                height={10}
                 className="w-[6px] h-[10px] opacity-40"
               />
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase pt-[1px]">
                 {cta.badge}
               </span>
-              <img 
+              <Image 
                 src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
                 alt="Right Dots" 
+                width={6}
+                height={10}
                 className="w-[6px] h-[10px] opacity-40 scale-x-[-1]"
               />
             </div>

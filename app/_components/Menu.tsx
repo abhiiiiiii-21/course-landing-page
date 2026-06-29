@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from 'next/link';
+import Image from 'next/image';
 import linksData from '@/data/links.json';
 
 const MotionLink = motion(Link);
@@ -74,7 +75,13 @@ const Menu = () => {
           {/* Left: Logo */}
           <div className="flex-1 h-full flex items-center pl-3 sm:pl-4 pr-1 sm:pr-2">
             <Link href="/" className="cursor-pointer">
-              <img src="/logo/full.webp" alt="Logo" className="h-[28px] sm:h-[40px] max-w-[110px] sm:max-w-[160px] w-auto object-contain" />
+              <Image 
+                src="/logo/full.webp" 
+                alt="Logo" 
+                width={160}
+                height={40}
+                className="h-[28px] sm:h-[40px] max-w-[110px] sm:max-w-[160px] w-auto object-contain" 
+              />
             </Link>
           </div>
           

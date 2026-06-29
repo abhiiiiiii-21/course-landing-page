@@ -4,6 +4,7 @@ import { motion, useInView, useMotionValue, useTransform, animate } from 'framer
 import pricingData from '@/data/pricing.json';
 import { SplitTextReveal } from './SplitTextReveal';
 import refundData from '@/data/refund.json';
+import Image from 'next/image';
 
 const CheckIcon = ({ highlight }: { highlight?: boolean }) => (
   <svg 
@@ -55,17 +56,21 @@ const Pricing = () => {
         {/* Header Section */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <img 
+            <Image 
               src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
               alt="Left Dots" 
+              width={7}
+              height={12}
               className="w-[7px] h-[12px] opacity-40"
             />
             <span className="text-[12px] font-bold tracking-[0.2em] text-gray-500 uppercase">
               Pricing
             </span>
-            <img 
+            <Image 
               src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
               alt="Right Dots" 
+              width={7}
+              height={12}
               className="w-[7px] h-[12px] opacity-40 scale-x-[-1]"
             />
           </div>
@@ -98,10 +103,12 @@ const Pricing = () => {
               >
                 {/* Background Watermarks */}
                 {!plan.highlight && (
-                  <img 
+                  <Image 
                     src="https://framerusercontent.com/images/yIJ73LClsZ5nE4tcWMpobKYTlQ.svg" 
                     alt="Rocket" 
-                    className="absolute bottom-0 right-[20px] w-[80px] opacity-[0.03] pointer-events-none grayscale"
+                    width={80}
+                    height={80}
+                    className="absolute bottom-0 right-[20px] w-[80px] h-[80px] opacity-[0.03] pointer-events-none grayscale"
                   />
                 )}
 
@@ -198,17 +205,21 @@ const Pricing = () => {
             {/* Left Side - Guarantee Details */}
             <div className="lg:w-5/12 flex flex-col relative z-10 pr-0 lg:pr-4">
               <div className="flex items-center gap-2 mb-5">
-                <img 
+                <Image 
                   src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
                   alt="Left Dots" 
+                  width={6}
+                  height={10}
                   className="w-[6px] h-[10px] opacity-40 brightness-0 invert"
                 />
                 <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase pt-[1px]">
                   {refundData.badge}
                 </span>
-                <img 
+                <Image 
                   src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
                   alt="Right Dots" 
+                  width={6}
+                  height={10}
                   className="w-[6px] h-[10px] opacity-40 scale-x-[-1] brightness-0 invert"
                 />
               </div>

@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import mentors from '@/data/mentors.json';
+import Image from 'next/image';
 import { SplitTextReveal } from './SplitTextReveal';
 
 const Mentors = () => {
@@ -30,17 +32,21 @@ const Mentors = () => {
         {/* Header Section */}
         <div className="text-center mb-16 sm:mb-20 max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <img 
+            <Image 
               src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
               alt="Left Dots" 
+              width={7}
+              height={12}
               className="w-[7px] h-[12px] opacity-40"
             />
             <span className="text-[12px] font-bold tracking-[0.2em] text-gray-500 uppercase">
               Meet Your Instructors
             </span>
-            <img 
+            <Image 
               src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
               alt="Right Dots" 
+              width={7}
+              height={12}
               className="w-[7px] h-[12px] opacity-40 scale-x-[-1]"
             />
           </div>
@@ -72,12 +78,16 @@ const Mentors = () => {
                     
                     {/* Left Image */}
                     <div className="w-full lg:w-1/2 rounded-[24px] overflow-hidden relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
-                      <img 
+                      <Image 
                         src={mentor.image} 
-                        alt={mentor.name} 
-                        className="absolute inset-0 w-full h-full object-cover object-top"
+                        alt={mentor.name}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-top"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=3149&auto=format&fit=crop';
+                          const target = e.target as HTMLImageElement;
+                          target.srcset = '';
+                          target.src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=3149&auto=format&fit=crop';
                         }}
                       />
                     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { SplitTextReveal } from "./SplitTextReveal";
 import { CheckCircle2, Plus, Minus, PlayCircle, ShieldCheck, MonitorPlay, FileText, Briefcase, GraduationCap } from "lucide-react";
@@ -117,33 +118,28 @@ export default function CourseCurriculum() {
     }
   };
 
-  const lineVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
-    }
-  };
-
   return (
     <section id="curriculum" className="relative w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto lg:border-x lg:border-gray-300/70">
       <div className="flex flex-col items-center relative z-10">
         
         {/* Section Badge */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          <img 
+          <Image 
             src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
             alt="Left Dots" 
+            width={7}
+            height={12}
             className="w-[7px] h-[12px] opacity-40"
           />
           <span className="text-[12px] font-bold tracking-[0.2em] text-gray-500 uppercase">
             Course Curriculum
           </span>
-          <img 
+          <Image 
             src="https://framerusercontent.com/images/T2mfWqIsv4Kpdf5hFk22cxmmg78.svg?width=9&height=15" 
             alt="Right Dots" 
-            className="w-[7px] h-[12px] opacity-40"
+            width={7}
+            height={12}
+            className="w-[7px] h-[12px] opacity-40 scale-x-[-1]"
           />
         </div>
 
@@ -187,18 +183,22 @@ export default function CourseCurriculum() {
               <div className="flex-1 flex flex-col">
                 {/* Badge */}
                 <div className="flex items-center gap-2 sm:gap-3 mb-8 sm:mb-10">
-                  <img 
+                  <Image 
                     src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
                     alt="Left Dots" 
+                    width={5}
+                    height={10}
                     className="w-[5px] h-[10px] opacity-40"
                   />
                   <span className="text-[12px] font-bold tracking-[0.2em] text-gray-400 uppercase">
                     30 Days money back guarantee
                   </span>
-                  <img 
+                  <Image 
                     src="https://framerusercontent.com/images/T2mfWqIsv4Kpdf5hFk22cxmmg78.svg?width=9&height=15" 
                     alt="Right Dots" 
-                    className="w-[5px] h-[10px] opacity-40"
+                    width={5}
+                    height={10}
+                    className="w-[5px] h-[10px] opacity-40 scale-x-[-1]"
                   />
                 </div>
 
@@ -253,9 +253,11 @@ export default function CourseCurriculum() {
                     'AI-Ready Legal Career Training'
                   ].map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-4">
-                      <img 
+                      <Image 
                         src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
                         alt="Arrow" 
+                        width={9}
+                        height={15}
                         className="w-[9px] h-[15px] mt-1 shrink-0 opacity-80"
                       />
                       <span className="text-gray-200 text-[15px] leading-snug font-medium pt-[1px]">{feature}</span>

@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 const COMPARISON_DATA = [
   { typical: "Pre-recorded videos", lawctopus: "54 Live Interactive Sessions" },
@@ -187,9 +188,11 @@ export default function WhyChoose() {
             <ul className="flex flex-col">
               {COMPARISON_DATA.map((item, i) => (
                 <li key={`typical-${i}`} className={`flex items-start sm:items-center gap-3 py-3 ${i !== COMPARISON_DATA.length - 1 ? 'border-b border-gray-200 border-dashed' : ''}`}>
-                  <img 
+                  <Image 
                     src="https://framerusercontent.com/images/ugnop9rgvLtICnv4zctDFsv5Q.svg?width=6&height=9" 
                     alt="Icon" 
+                    width={7}
+                    height={12}
                     className="w-[7px] h-[12px] object-contain shrink-0 opacity-40 mt-1 sm:mt-0"
                   />
                   <span className="text-[14px] sm:text-[15px] font-medium text-gray-500 leading-tight">{item.typical}</span>
@@ -222,9 +225,11 @@ export default function WhyChoose() {
               <ul className="flex flex-col">
                 {COMPARISON_DATA.map((item, i) => (
                   <li key={`lawctopus-${i}`} className={`flex items-start sm:items-center gap-3 py-3 ${i !== COMPARISON_DATA.length - 1 ? 'border-b border-black/15 border-dashed' : ''}`}>
-                    <img 
+                    <Image 
                       src="https://framerusercontent.com/images/ugnop9rgvLtICnv4zctDFsv5Q.svg?width=6&height=9" 
                       alt="Icon" 
+                      width={7}
+                      height={12}
                       className={`w-[7px] h-[12px] object-contain shrink-0 mt-1 sm:mt-0 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-40'}`}
                     />
                     <span className={`text-[14px] sm:text-[15px] font-semibold leading-tight transition-colors duration-500 ${isActive ? 'text-gray-900' : 'text-gray-500'}`}>
