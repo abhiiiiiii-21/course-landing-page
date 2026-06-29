@@ -1,0 +1,63 @@
+{
+  "badge": "Course Features",
+  "heading": "Master Law with AI",
+  "subheading": "Learn from India's leading legal-tech experts through live AI sessions, practical workshops, premium tools, and exclusive resources built for modern legal professionals.",
+
+  "features": [
+    {
+      "step": "01",
+      "title": "Live AI Sessions",
+      "description": "Attend regular live sessions conducted by leading legal-tech organisations like Indian Kanoon (Prism) and Jurisphere to learn how AI is used in real legal practice.",
+      "highlights": [
+        "Indian Kanoon (Prism)",
+        "Jurisphere",
+        "Real Legal Work"
+      ],
+      "buttonText": "Enroll Now"
+    },
+    {
+      "step": "02",
+      "title": "AI Workshop for Lawyers",
+      "description": "Access a structured 4-hour recorded workshop covering legal research, contract drafting, mooting, and AI ethics for legal professionals.",
+      "highlights": [
+        "4 Recorded Sessions",
+        "Legal Research",
+        "Contract Drafting"
+      ],
+      "buttonText": "Enroll Now"
+    },
+    {
+      "step": "03",
+      "title": "Hands-on AI Tools",
+      "description": "Receive complimentary access to Indian Kanoon's AI platform, Prism, and practice legal research, drafting, and document analysis using real AI tools.",
+      "highlights": [
+        "1-Month Prism Access",
+        "AI Legal Research",
+        "Document Drafting"
+      ],
+      "buttonText": "Enroll Now"
+    },
+    {
+      "step": "04",
+      "title": "Faculty AI Mentorship",
+      "description": "Learn directly from faculty and mentors who demonstrate practical AI applications across contract drafting, litigation, research, corporate law, and career development.",
+      "highlights": [
+        "Expert Mentors",
+        "Career Guidance",
+        "Practical AI Skills"
+      ],
+      "buttonText": "Enroll Now"
+    },
+    {
+      "step": "05",
+      "title": "Exclusive AI Prompt Library",
+      "description": "Get a 31-page AI Prompt eBook created for law students with ready-to-use prompts across drafting, litigation, research, IPR, corporate law, and legal careers.",
+      "highlights": [
+        "31-Page eBook",
+        "Ready-to-use Prompts",
+        "6 Practice Areas"
+      ],
+      "buttonText": "Enroll Now"
+    }
+  ]
+}

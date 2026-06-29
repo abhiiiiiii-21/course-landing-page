@@ -5,6 +5,7 @@ import pricingData from '@/data/pricing.json';
 import { SplitTextReveal } from './SplitTextReveal';
 import refundData from '@/data/refund.json';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CheckIcon = ({ highlight }: { highlight?: boolean }) => (
   <svg 
@@ -55,24 +56,10 @@ const Pricing = () => {
         
         {/* Header Section */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Image 
-              src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
-              alt="Left Dots" 
-              width={7}
-              height={12}
-              className="w-[7px] h-[12px] opacity-40"
-            />
-            <span className="text-[12px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-              Pricing
-            </span>
-            <Image 
-              src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
-              alt="Right Dots" 
-              width={7}
-              height={12}
-              className="w-[7px] h-[12px] opacity-40 scale-x-[-1]"
-            />
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Image src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" alt="Icon" width={6} height={10} className="opacity-60 brightness-0" />
+            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#1c1c1c]/70 uppercase pt-[1px]">Pricing</span>
+            <Image src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" alt="Icon" width={6} height={10} className="opacity-60 brightness-0 scale-x-[-1]" />
           </div>
           <SplitTextReveal 
             as="h2"
@@ -169,7 +156,7 @@ const Pricing = () => {
                     ))}
                   </ul>
 
-                  <a 
+                  <Link 
                     href={plan.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -179,7 +166,7 @@ const Pricing = () => {
                         : 'bg-[#F7931E] text-white hover:bg-[#F7931E] shadow-lg shadow-orange-500/20'
                     }`}
                   >
-                    <div className="relative overflow-hidden leading-tight flex items-center h-[24px]">
+                    <div className="relative overflow-hidden leading-tight">
                       <span
                         className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full after:content-[attr(data-text)] after:absolute after:left-0 after:top-full"
                         data-text={plan.buttonText}
@@ -187,7 +174,7 @@ const Pricing = () => {
                         {plan.buttonText}
                       </span>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { SplitTextReveal } from "./SplitTextReveal";
 import { CheckCircle2, Plus, Minus, PlayCircle, ShieldCheck, MonitorPlay, FileText, Briefcase, GraduationCap } from "lucide-react";
@@ -123,24 +124,10 @@ export default function CourseCurriculum() {
       <div className="flex flex-col items-center relative z-10">
         
         {/* Section Badge */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <Image 
-            src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
-            alt="Left Dots" 
-            width={7}
-            height={12}
-            className="w-[7px] h-[12px] opacity-40"
-          />
-          <span className="text-[12px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-            Course Curriculum
-          </span>
-          <Image 
-            src="https://framerusercontent.com/images/T2mfWqIsv4Kpdf5hFk22cxmmg78.svg?width=9&height=15" 
-            alt="Right Dots" 
-            width={7}
-            height={12}
-            className="w-[7px] h-[12px] opacity-40 scale-x-[-1]"
-          />
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <Image src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" alt="Icon" width={6} height={10} className="opacity-60 brightness-0" />
+          <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#1c1c1c]/70 uppercase pt-[1px]">Course Curriculum</span>
+          <Image src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" alt="Icon" width={6} height={10} className="opacity-60 brightness-0 scale-x-[-1]" />
         </div>
 
         {/* Headings */}
@@ -267,7 +254,7 @@ export default function CourseCurriculum() {
               </div>
 
               <div className="mt-auto pt-6 relative">
-                <a 
+                <Link 
                   href="/curriculum/main.pdf" 
                   download="Lawctopus_Course_Curriculum.pdf"
                   target="_blank" 
@@ -277,12 +264,12 @@ export default function CourseCurriculum() {
                   <div className="relative overflow-hidden leading-tight flex items-center h-[24px]">
                     <span
                       className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full after:content-[attr(data-text)] after:absolute after:left-0 after:top-full"
-                      data-text="Download Full Curriculum"
+                      data-text="Download Curriculum"
                     >
-                      Download Full Curriculum
+                      Download Curriculum
                     </span>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>

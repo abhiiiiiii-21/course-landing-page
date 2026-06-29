@@ -8,6 +8,7 @@ import Pricing from "./_components/Pricing";
 import FAQs from "./_components/FAQs";
 import CTA from "./_components/CTA";
 import Footer from "./_components/Footer";
+import Features from "./_components/Features";
 
 export default function Home() {
   return (
@@ -37,6 +38,9 @@ export default function Home() {
         {/* Why Choose Section Container */}
         <div id="overview" className="w-full border-b border-gray-300/70">
           <WhyChoose />
+        </div>
+        <div id="overview" className="w-full border-b border-gray-300/70">
+          <Features />
         </div>
 
         <div id="curriculum" className="w-full border-b border-gray-300/70">

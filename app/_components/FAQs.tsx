@@ -19,24 +19,10 @@ const FAQs = () => {
         
         {/* Header Section */}
         <div className="text-center mb-12 relative">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Image 
-              src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
-              alt="Left Dots" 
-              width={7}
-              height={12}
-              className="w-[7px] h-[12px] opacity-40"
-            />
-            <span className="text-[12px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-              {faqsData.badge}
-            </span>
-            <Image 
-              src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" 
-              alt="Right Dots" 
-              width={7}
-              height={12}
-              className="w-[7px] h-[12px] opacity-40 scale-x-[-1]"
-            />
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Image src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" alt="Icon" width={6} height={10} className="opacity-60 brightness-0" />
+            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#1c1c1c]/70 uppercase pt-[1px]">{faqsData.badge}</span>
+            <Image src="https://framerusercontent.com/images/F8wan4JxRuiIlSJe5tqI0wnJhM.svg?width=9&height=15" alt="Icon" width={6} height={10} className="opacity-60 brightness-0 scale-x-[-1]" />
           </div>
           
           <div className="relative inline-block">
